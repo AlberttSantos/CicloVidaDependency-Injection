@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ExemplosCiclosVida.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,8 +32,13 @@ namespace ExemplosCiclosVida
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddSingleton<IRenderSingleton, RenderSingleton>();
+
+            services.AddScoped<IRenderScoped, RenderScoped>();
+
+            services.AddTransient<IRenderTransient, RenderTransient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

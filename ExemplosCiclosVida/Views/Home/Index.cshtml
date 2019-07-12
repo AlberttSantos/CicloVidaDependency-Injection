@@ -5,4 +5,45 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div class="row">
+        <div class="col">
+            <label class="font-weight-bold">Singletons</label>
+            <br />
+            @foreach (var item in ViewBag.Singletons)
+            {
+                @Html.Raw(item)
+                <br />
+            }
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col">
+            <label class="font-weight-bold">Transients</label>
+            <br />
+            @foreach (var item in ViewBag.Transients)
+            {
+                @Html.Raw(item)
+                <br />
+            }
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col">
+            <label class="font-weight-bold">Scopes</label>
+            <br />
+            @foreach (var item in ViewBag.Scopes)
+            {
+                @Html.Raw(item)
+                <br />
+            }
+        </div>
+    </div>
+    <hr />
+
 </div>
+
